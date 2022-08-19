@@ -26,7 +26,7 @@ client.on('interactionCreate', async interaction => {
 	else if (commandName === 'user') {
 		await interaction.reply('User tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}');
 	}
-	else if (commandName === 'welcome') {
+	else if (commandName === 'checkmembercount') {
 		await interaction.reply('Member count: ${interaction.guild.memberCount}');
 	}
 });
