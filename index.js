@@ -26,7 +26,15 @@ client.on('interactionCreate', async interaction => {
 	else if (commandName === 'user') {
 		await interaction.reply('User tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}');
 	}
+	else if (commandName === 'welcome') {
+		await interaction.reply('Member count: ${interaction.guild.memberCount}');
+	}
 });
+
+// client.on('guildMemberAdd', member => {
+// 	member.createDM();
+// 	member.dmChanel.send('Willkommen bei SoloLvLing');
+// });
 
 // Login to Discord with your client's token
 client.login(token);
