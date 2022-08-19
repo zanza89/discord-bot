@@ -18,16 +18,12 @@ client.on('interactionCreate', async interaction => {
 	if (commandName === 'ping') {
 		const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });
 		interaction.editReply(`Roundtrip latency: ${sent.createdTimestamp - interaction.createdTimestamp}ms`);
-		// await interaction.reply('Pong!');
 	}
 	else if (commandName === 'server') {
-		await interaction.reply('Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}');
+		await interaction.reply('Server name:' + interaction.guild.name + '\nTotal members: ' + interaction.guild.memberCount);
 	}
 	else if (commandName === 'user') {
-		await interaction.reply('User tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}');
-	}
-	else if (commandName === 'checkmembercount') {
-		await interaction.reply('Member count: ${interaction.guild.memberCount}');
+		await interaction.reply('User tag:' + interaction.user.tag + '\nYour id:' + interaction.user.id);
 	}
 });
 
