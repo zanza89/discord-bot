@@ -10,5 +10,6 @@ module.exports = {
 		}).catch((e) => {
 			console.error(e);
 		});
+		return interaction.reply('whats that?');
 	},
 };
