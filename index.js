@@ -8,6 +8,7 @@ const { token } = require('./config.json');
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
+// dynamically retrieving commands
 client.commands = new Map();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
@@ -18,10 +19,20 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
-// When the client is ready, run this code (only once)
-client.once('ready', c => {
-	console.log('Ready! Logged in as ' + c.user.tag);
-});
+// dynamically retrieving events
+const eventsPath = path.join(__dirname, 'events');
+const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
+
+for (const file of eventFiles) {
+	const filePath = path.join(eventsPath, file);
+	const event = require(filePath);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	}
+	else {
+		client.on(event.name, (...args) => event.execute(...args));
+	}
+}
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
@@ -37,11 +48,6 @@ client.on('interactionCreate', async interaction => {
 		console.error(e);
 		await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
 	}
-});
-
-client.on('guildMemberAdd', member => {
-	member.createDM();
-	member.dmChanel.send('Willkommen bei SoloLvLing');
 });
 
 // Login to Discord with your client's token
