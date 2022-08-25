@@ -11,6 +11,6 @@ module.exports = {
 		        .setRequired(true)),
 	async execute(interaction) {
 		const input_string = interaction.options.getString('input');
-		interaction.reply(input_string);
+		await interaction.reply(input_string);
 	},
 };
