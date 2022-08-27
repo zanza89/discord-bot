@@ -38,21 +38,8 @@ for (const file of eventFiles) {
 }
 
 client.on('interactionCreate', async interaction => {
-	if (interaction.isChatInputCommand()) {
+	if (!interaction.isChatInputCommand()) {
 
-		const command = client.commands.get(interaction.commandName);
-
-		if (!command) return;
-
-		try {
-			await command.execute(interaction);
-		}
-		catch (e) {
-			console.error(e);
-			await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
-		}
-	}
-	else if (interaction.isSelectMenu()) {
 		const command = client.commands.get(interaction.commandName);
 
 		if (!command) return;
