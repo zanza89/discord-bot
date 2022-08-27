@@ -4,8 +4,12 @@ const path = require('node:path');
 const { Client, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
+// my intents
+// const myIntents = new IntentsBitField();
+// myIntents.add(IntentsBitField.Flags.GuildPresences, IntentsBitField.Flags.GuildMembers, GatewayIntentBits.Guilds);
+
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: GatewayIntentBits.Guilds });
 
 // dynamically retrieving commands
 client.commands = new Map();
