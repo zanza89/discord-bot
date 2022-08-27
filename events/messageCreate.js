@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'messageCreate',
-	execute(interaction) {
-		console.log(interaction);
+	execute(message) {
+		console.log(message.content);
 	},
 };
