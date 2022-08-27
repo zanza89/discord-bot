@@ -53,8 +53,8 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.on('interactionUserContextMenuCommand', async interaction => {
-	if (!interaction.isUserContextMenuCommand()) return;
+client.on('interactionSelectMenu', async interaction => {
+	if (!interaction.isSelectMenu()) return;
 
 	const command = client.commands.get(interaction.commandName);
 
