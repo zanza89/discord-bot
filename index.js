@@ -38,34 +38,32 @@ for (const file of eventFiles) {
 }
 
 client.on('interactionCreate', async interaction => {
-	if (!interaction.isChatInputCommand()) return;
+	if (interaction.isChatInputCommand()) {
 
-	const command = client.commands.get(interaction.commandName);
+		const command = client.commands.get(interaction.commandName);
 
-	if (!command) return;
+		if (!command) return;
 
-	try {
-		await command.execute(interaction);
+		try {
+			await command.execute(interaction);
+		}
+		catch (e) {
+			console.error(e);
+			await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
+		}
 	}
-	catch (e) {
-		console.error(e);
-		await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
-	}
-});
+	else if (interaction.isSelectMenu()) {
+		const command = client.commands.get(interaction.commandName);
 
-client.on('interactionSelectMenu', async interaction => {
-	if (!interaction.isSelectMenu()) return;
+		if (!command) return;
 
-	const command = client.commands.get(interaction.commandName);
-
-	if (!command) return;
-
-	try {
-		await command.execute(interaction);
-	}
-	catch (e) {
-		console.error(e);
-		await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
+		try {
+			await command.execute(interaction);
+		}
+		catch (e) {
+			console.error(e);
+			await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
+		}
 	}
 });
 
