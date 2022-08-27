@@ -9,7 +9,7 @@ module.exports = {
 			.addComponents(
 				new SelectMenuBuilder()
 					.setCustomId('select_logo')
-					.setPlaceholder('nichts ausgewählt')
+					.setPlaceholder('nichts ausgewählt..')
 					.addOptions(
 						{
 							label: 'Uno',

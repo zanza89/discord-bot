@@ -53,5 +53,21 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
+client.on('interactionUserContextMenuCommand', async interaction => {
+	if (!interaction.isUserContextMenuCommand()) return;
+
+	const command = client.commands.get(interaction.commandName);
+
+	if (!command) return;
+
+	try {
+		await command.execute(interaction);
+	}
+	catch (e) {
+		console.error(e);
+		await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
+	}
+});
+
 // Login to Discord with your client's token
 client.login(token);
