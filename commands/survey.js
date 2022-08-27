@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, ActionRowBuilder, EmbedBuilder, SelectMenuBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -7,49 +7,61 @@ module.exports = {
 	async execute(interaction) {
 		const row = new ActionRowBuilder()
 			.addComponents(
-				new ButtonBuilder()
-					.setCustomId('logo1')
-					.setLabel('Uno')
-					.setStyle(ButtonStyle.Primary),
-				new ButtonBuilder()
-					.setCustomId('logo2')
-					.setLabel('Dos')
-					.setStyle(ButtonStyle.Primary),
-				new ButtonBuilder()
-					.setCustomId('logo3')
-					.setLabel('Tres')
-					.setStyle(ButtonStyle.Primary),
-				new ButtonBuilder()
-					.setCustomId('logo4')
-					.setLabel('Cuatro')
-					.setStyle(ButtonStyle.Primary),
-				new ButtonBuilder()
-					.setCustomId('logo5')
-					.setLabel('Cinco')
-					.setStyle(ButtonStyle.Primary),
-			);
-		const row2 = new ActionRowBuilder()
-			.addComponents(
-				new ButtonBuilder()
-					.setCustomId('logo6')
-					.setLabel('Seis')
-					.setStyle(ButtonStyle.Primary),
-				new ButtonBuilder()
-					.setCustomId('logo7')
-					.setLabel('Siete')
-					.setStyle(ButtonStyle.Primary),
-				new ButtonBuilder()
-					.setCustomId('logo8')
-					.setLabel('Ocho')
-					.setStyle(ButtonStyle.Primary),
-				new ButtonBuilder()
-					.setCustomId('logo9')
-					.setLabel('Nueve')
-					.setStyle(ButtonStyle.Primary),
-				new ButtonBuilder()
-					.setCustomId('logo10')
-					.setLabel('Diez')
-					.setStyle(ButtonStyle.Primary),
+				new SelectMenuBuilder()
+					.setCustomId('select_logo')
+					.setPlaceholder('nichts ausgewählt')
+					.addOptions(
+						{
+							label: 'Uno',
+							description: 'crystal-raspberry',
+							value: 'first_option',
+						},
+						{
+							label: 'Dos',
+							description: 'dark-purpled',
+							value: 'second_option',
+						},
+						{
+							label: 'Tres',
+							description: 'light-purpled',
+							value: 'third_option',
+						},
+						{
+							label: 'Cuatro',
+							description: 'black-and-white',
+							value: 'fourth_option',
+						},
+						{
+							label: 'Cinco',
+							description: 'emerald-green',
+							value: 'fith_option',
+						},
+						{
+							label: 'Seis',
+							description: 'fire-nation-red',
+							value: 'sixth_option',
+						},
+						{
+							label: 'Siete',
+							description: 'dried-blood-crusade',
+							value: 'seventh_option',
+						},
+						{
+							label: 'Ocho',
+							description: 'dried-blood-persia',
+							value: 'eighth_option',
+						},
+						{
+							label: 'Nueve',
+							description: 'crystal-shallow',
+							value: 'ninth_option',
+						},
+						{
+							label: 'Diez',
+							description: 'crystal-ocean',
+							value: 'tenth_option',
+						},
+					),
 			);
 		const embed = new EmbedBuilder()
 			.setColor(0x3498DB)
@@ -102,7 +114,7 @@ module.exports = {
 			.setTimestamp()
 			.setFooter({ text: '\u00A9' + 'copyright Eren Gencer (Tona)' });
 
-		await interaction.reply({ content: '', ephemeral: true, embeds: [embed, embed2, embed3, embed4, embed5, embed6, embed7, embed8, embed9, embed10], components: [row, row2] });
-		if (!interaction.isButton()) return;
+		await interaction.reply({ content: '', ephemeral: true, embeds: [embed, embed2, embed3, embed4, embed5, embed6, embed7, embed8, embed9, embed10], components: [row] });
+
 	},
 };
