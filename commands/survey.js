@@ -66,14 +66,14 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setColor(0x3498DB)
 			.setAuthor({ name: 'Tona', iconURL: 'https://cdn.discordapp.com/avatars/123301130443685890/557b618fabe8a274f5eb1ca02924fd70.webp' })
-			.setTitle('Clanumfrage')
-			.setDescription('Hi Clanmember,\n\nder Clan ist in letzter Zeit stetig gewachsen und das ist auch nicht zuletzt euer Verdienst. Anlässlich der Gestaltung einer Hompage für den Clan, starten wir eine Umfrage, um ein passendes Clanlogo zu erwählen :)\nFür Desgin- Vorschläge bzw. Änderungen sind wir natürlich auch offen.')
+			.setTitle('SoloLvLing')
+			.setDescription('Hi Clanmember,\n\nder Clan ist in letzter Zeit stetig gewachsen und das ist auch nicht zuletzt euer Verdienst. Anlässlich der Gestaltung einer Hompage für den Clan, starten wir eine Umfrage, um ein passendes Clanlogo zu erwählen :)\nFür Desgin- Vorschläge bzw. Änderungen sind wir natürlich auch offen.\nAlle Logos in einem Video -> https://youtu.be/3p-diH3sMOw')
 			.setThumbnail('https://cdn.discordapp.com/avatars/1009464464711634984/170a441bcb686530a8e4b17fdcdbbd06.webp')
 			.addFields({ name: 'Wähle ein Logo aus!', value: 'es stehen folgende zur Auswahl..' },
 				{ name: '\u200B', value: '\u200B' },
 				{ name: 'Design Uno', value: 'crystal-raspberry' },
 			)
-			.setURL('https://youtu.be/3p-diH3sMOw')
+			.setURL('https://immortal.zwoggel.org')
 			.setImage('https://cdn.discordapp.com/attachments/987474227995230329/1012661916675608576/IMG_0122.png');
 
 		const embed2 = new EmbedBuilder()
