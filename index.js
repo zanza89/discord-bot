@@ -44,7 +44,6 @@ client.on('warn', (e) => console.warn(e));
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
-	// if (!interaction.isSelectMenu()) return;
 
 	const command = client.commands.get(interaction.commandName);
 
@@ -56,6 +55,15 @@ client.on('interactionCreate', async interaction => {
 	catch (e) {
 		console.error(e);
 		await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
+	}
+});
+
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isSelectMenu()) return;
+
+	if (interaction.customId === 'select_logo') {
+		await interaction.update({ content: 'something was selected', components: [] });
+		console.log(interaction);
 	}
 });
 
