@@ -3,12 +3,7 @@ const discord = require('discord.js');
 module.exports = {
 	name: 'messageCreate',
 	execute(message) {
-		// log every message in console
-		// console.log(message.content);
-		// console.log(message.createdAt.toDateString());
-		// console.log(message.author.tag);
-
-		// use collection class
+		// collect 'test'
 		if (message.author.bot) return;
 
 		// message.channel.send('bot is collecting messages now..');
