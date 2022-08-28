@@ -44,7 +44,7 @@ client.on('warn', (e) => console.warn(e));
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
-	if (!interaction.isSelectMenu()) return;
+	// if (!interaction.isSelectMenu()) return;
 
 	const command = client.commands.get(interaction.commandName);
 
