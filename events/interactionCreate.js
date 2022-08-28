@@ -1,4 +1,5 @@
 // const discord = require('discord.js');
+const { ComponentType } = require('discord.js');
 module.exports = {
 	name: 'interactionCreate',
 	execute(interaction) {
