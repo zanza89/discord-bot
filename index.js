@@ -38,6 +38,10 @@ for (const file of eventFiles) {
 	}
 }
 
+client.on('error', (e) => console.error(e));
+client.on('warn', (e) => console.warn(e));
+client.on('debug', (e) => console.info(e));
+
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) {
 
