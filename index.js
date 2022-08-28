@@ -39,22 +39,21 @@ for (const file of eventFiles) {
 }
 client.on('error', (e) => console.error(e));
 client.on('warn', (e) => console.warn(e));
-client.on('debug', (e) => console.info(e));
+// client.on('debug', (e) => console.info(e));
 
 client.on('interactionCreate', async interaction => {
-	if (!interaction.isChatInputCommand()) {
+	if (!interaction.isChatInputCommand()) return;
 
-		const command = client.commands.get(interaction.commandName);
+	const command = client.commands.get(interaction.commandName);
+	await interaction.deferReply();
+	if (!command) return;
 
-		if (!command) return;
-
-		try {
-			await command.execute(interaction);
-		}
-		catch (e) {
-			console.error(e);
-			await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
-		}
+	try {
+		await command.execute(interaction);
+	}
+	catch (e) {
+		console.error(e);
+		await interaction.reply({ content: 'there was an error while executing this command!', ephermal:true });
 	}
 });
 
