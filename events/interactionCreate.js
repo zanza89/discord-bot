@@ -1,5 +1,5 @@
 // const discord = require('discord.js');
-const { ComponentType, InteractionCollector } = require('discord.js');
+const { InteractionCollector } = require('discord.js');
 module.exports = {
 	name: 'interactionCreate',
 	execute(interaction, client) {
@@ -10,7 +10,7 @@ module.exports = {
 		if (interaction.customId === 'select_logo') {
 			interaction.update({ content: 'something was selected', components: [] });
 			console.log(interaction);
-			const collector = new InteractionCollector({ client, componentType: ComponentType.SelectMenu });
+			const collector = new InteractionCollector({ client });
 			collector.on('collect', i => {
 				if (i.user.id === interaction.user.id) {
 					i.reply(i.user.id + 'clicked on the ' + i.customId + ' button.');
