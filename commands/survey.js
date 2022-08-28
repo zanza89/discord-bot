@@ -14,52 +14,52 @@ module.exports = {
 						{
 							label: 'Uno',
 							description: 'crystal-raspberry',
-							value: 'first_option',
+							value: 'crystal-raspberry',
 						},
 						{
 							label: 'Dos',
 							description: 'dark-purpled',
-							value: 'second_option',
+							value: 'dark-purpled',
 						},
 						{
 							label: 'Tres',
 							description: 'light-purpled',
-							value: 'third_option',
+							value: 'light-purpled',
 						},
 						{
 							label: 'Cuatro',
 							description: 'black-and-white',
-							value: 'fourth_option',
+							value: 'black-and-white',
 						},
 						{
 							label: 'Cinco',
 							description: 'emerald-green',
-							value: 'fith_option',
+							value: 'emerald-green',
 						},
 						{
 							label: 'Seis',
 							description: 'fire-nation-red',
-							value: 'sixth_option',
+							value: 'fire-nation-red',
 						},
 						{
 							label: 'Siete',
 							description: 'dried-blood-crusade',
-							value: 'seventh_option',
+							value: 'dried-blood-crusade',
 						},
 						{
 							label: 'Ocho',
 							description: 'dried-blood-persia',
-							value: 'eighth_option',
+							value: 'dried-blood-persia',
 						},
 						{
 							label: 'Nueve',
 							description: 'crystal-shallow',
-							value: 'ninth_option',
+							value: 'crystal-shallow',
 						},
 						{
 							label: 'Diez',
 							description: 'crystal-ocean',
-							value: 'tenth_option',
+							value: 'crystal-ocean',
 						},
 					),
 			);
