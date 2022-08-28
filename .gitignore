@@ -1,4 +1,4 @@
 /config.json
 /node_modules
 /res
-.DS_Store
+/.DS_Store
