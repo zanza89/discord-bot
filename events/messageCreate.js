@@ -19,5 +19,8 @@ module.exports = {
 			}
 		});
 
+		collector.on('end', collected => {
+			console.log('collected ' + collected.size + ' items');
+		});
 	},
 };
