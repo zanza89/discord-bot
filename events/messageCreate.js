@@ -7,7 +7,7 @@ module.exports = {
 		if (message.author.bot) return;
 
 		// message.channel.send('bot is collecting messages now..');
-		const counter = 0;
+		let counter = 0;
 		const filter = m => m.content.includes('test');
 		const collector = new discord.MessageCollector(message.channel, filter);
 		collector.on('collect', m => {
