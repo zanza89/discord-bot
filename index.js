@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
+// const discord = require('discord.js');
 
 // Create a new client instance
 const client = new Client({
@@ -58,14 +59,14 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isSelectMenu()) return;
+// client.on('interactionCreate', async interaction => {
+// 	if (!interaction.isSelectMenu()) return;
 
-	if (interaction.customId === 'select_logo') {
-		await interaction.update({ content: 'something was selected', components: [] });
-		console.log(interaction);
-	}
-});
+// 	if (interaction.customId === 'select_logo') {
+// 		await interaction.update({ content: 'something was selected', components: [] });
+// 		console.log(interaction);
+// 	}
+// });
 
 // Login to Discord with your client's token
 client.login(token);
