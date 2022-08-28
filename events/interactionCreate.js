@@ -8,7 +8,7 @@ module.exports = {
 		if (interaction.customId === 'select_logo') {
 			interaction.update({ content: 'something was selected', components: [] });
 			console.log(interaction.values);
-			interaction.reply(interaction.user.tag + 'voted for Design' + interaction.value);
+			interaction.followUp(interaction.user.tag + 'voted for Design' + interaction.value);
 		}
 	},
 };
