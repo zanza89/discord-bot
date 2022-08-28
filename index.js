@@ -59,14 +59,5 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-// client.on('interactionCreate', async interaction => {
-// 	if (!interaction.isSelectMenu()) return;
-
-// 	if (interaction.customId === 'select_logo') {
-// 		await interaction.update({ content: 'something was selected', components: [] });
-// 		console.log(interaction);
-// 	}
-// });
-
 // Login to Discord with your client's token
 client.login(token);
