@@ -1,4 +1,4 @@
-// const discord = require('discord.js');
+const discord = require('discord.js');
 
 module.exports = {
 	name: 'messageCreate',
@@ -8,7 +8,7 @@ module.exports = {
 
 		// message.channel.send('bot is collecting messages now..');
 		const filter = m => m.content.includes('discord');
-		const collector = message.channel.createMessageCollector({ filter, maxProcessed: 5 });
+		const collector = discord.MessageCollector({ filter, maxProcessed: 5 });
 		collector.on('collect', m => {
 			console.log('collected message: ' + m.content);
 		});
