@@ -13,7 +13,7 @@ module.exports = {
 		collector.on('collect', m => {
 			console.log('collected message: ' + m.content);
 			// eslint-disable-next-line no-const-assign
-			counter++;
+			++counter;
 			if (counter === 3) {
 				collector.stop();
 			}
