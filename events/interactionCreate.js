@@ -7,7 +7,7 @@ module.exports = {
 		if (!interaction.isSelectMenu()) return;
 		if (interaction.customId === 'select_logo') {
 			interaction.update({ content: 'something was selected', components: [] });
-			console.log(interaction);
+			console.log(interaction.values);
 		}
 	},
 };
