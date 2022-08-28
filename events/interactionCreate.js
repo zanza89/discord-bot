@@ -9,6 +9,15 @@ module.exports = {
 		if (interaction.customId === 'select_logo') {
 			interaction.update({ content: 'something was selected', components: [] });
 			console.log(interaction);
+			const collector = interaction.createMessageComponentCollector({ componentType: ComponentType.SelectMenu, time: 15000 });
+			collector.on('collect', i => {
+				if (i.user.id === interaction.user.id) {
+					i.reply(i.user.id + 'clicked on the ' + i.customId + ' button.');
+				}
+				else {
+					i.reply({ content: 'These Menu isnt for you!', ephermal: true });
+				}
+			});
 		}
 	},
 };
