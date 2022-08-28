@@ -1,8 +1,6 @@
-// const discord = require('discord.js');
-const { InteractionCollector } = require('discord.js');
 module.exports = {
 	name: 'interactionCreate',
-	execute(interaction, client) {
+	execute(interaction) {
 		console.log(interaction.user.tag + ' in ' + interaction.channel.name + ' triggered an interaction.');
 
 		// selectMenu handling
@@ -10,15 +8,6 @@ module.exports = {
 		if (interaction.customId === 'select_logo') {
 			interaction.update({ content: 'something was selected', components: [] });
 			console.log(interaction);
-			const collector = new InteractionCollector({ client });
-			collector.on('collect', i => {
-				if (i.user.id === interaction.user.id) {
-					i.reply(i.user.id + 'clicked on the ' + i.customId + ' button.');
-				}
-				else {
-					i.reply({ content: 'These Menu isnt for you!', ephermal: true });
-				}
-			});
 		}
 	},
 };
