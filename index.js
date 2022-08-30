@@ -43,9 +43,6 @@ client.on('error', (e) => console.error(e));
 client.on('warn', (e) => console.warn(e));
 client.on('debug', (e) => console.info(e));
 
-// test emit-guildMemberAdd
-client.emit('guildMemberAdd', 'zanza');
-
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
