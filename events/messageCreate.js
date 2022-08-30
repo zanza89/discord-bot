@@ -6,11 +6,12 @@ module.exports = {
 		// collect 'test'
 		if (message.author.bot) return;
 
-		// message.channel.send('bot is collecting messages now..');
-		const filter = m => m.content.includes('?crystal-ocean');
+		const channel = message.client.channels.cache.get('1009960570683928627');
+		const filter = m => m.content.includes('immortal');
 		const collector = message.channel.createMessageCollector({ filter, maxProcessed: 5 });
 		collector.on('collect', m => {
 			console.log('collected message: ' + m.content);
+			channel.send(m.content);
 		});
 
 		collector.on('end', collected => {
