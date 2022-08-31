@@ -3,6 +3,6 @@ module.exports = {
 	execute(interaction) {
 
 		// interaction.guild.channels.cache.find(c => c.name === 'verifizierung').send(member.user.username + 'has joined this server');
-		interaction.reply('not yet implemented');
+		console.log(interaction);
 	},
 };
