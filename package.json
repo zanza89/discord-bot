@@ -17,7 +17,8 @@
     "@discordjs/rest": "^1.0.1",
     "@napi-rs/canvas": "^0.1.28",
     "discord.js": "^14.2.0",
-    "fs.js": "^0.0.1"
+    "fs.js": "^0.0.1",
+    "undici": "^5.10.0"
   },
   "devDependencies": {
     "eslint": "^8.22.0",
