@@ -10,7 +10,7 @@ module.exports = {
 			let fullBody = '';
 
 			for await (const data of body) {
-				fullBody += data.toString();
+				fullBody += JSON.stringify(data);
 			}
 
 			return JSON.parse(fullBody);
