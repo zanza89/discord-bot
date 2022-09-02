@@ -16,14 +16,11 @@ module.exports = {
 			return JSON.parse(fullBody);
 		}
 		const immortalResult = await request('https://immortal.zwoggel.org/api/json/charlist');
-		// const char_name = 'char_name';
-		// const data = 'data';
-		// const ok = 'message';
-		const response = await getJSONResponse(immortalResult.data[2]);
+		const data = await getJSONResponse(immortalResult.data);
 		try {
-			const property_keys = Object.keys(response);
-			const property_values = Object.values(response);
-			const property_entries = Object.entries(response);
+			const property_keys = Object.keys(data);
+			const property_values = Object.values(data);
+			const property_entries = Object.entries(data);
 
 			console.log('keys: ' + property_keys);
 			console.log('values: ' + property_values);
