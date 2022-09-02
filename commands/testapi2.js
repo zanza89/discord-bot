@@ -16,7 +16,7 @@ module.exports = {
 			return JSON.parse(fullBody);
 		}
 		const immortalResult = request('https://immortal.zwoggel.org/api/json/charlist');
-		const response = await getJSONResponse(immortalResult.body);
+		const response = await getJSONResponse(immortalResult);
 		try {
 			const property_keys = Object.keys(response);
 			const property_values = Object.values(response);
@@ -30,6 +30,6 @@ module.exports = {
 			console.log('there was a mistake happened');
 			console.log(error);
 		}
-		interaction.deferReply();
+		interaction.deferReply('...');
 	},
 };
