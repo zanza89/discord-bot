@@ -1,11 +1,11 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { fetch } = require('undici');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('testapi')
 		.setDescription('test to fetch da api json'),
 	async execute(interaction) {
-		const fetch = require('node-fetch');
 		const data = { active: 'example' };
 		const channel = interaction.client.channels.cache.get('1009958552892346378');
 		fetch('https://immortal.zwoggel.org/api/json/charlist', {
