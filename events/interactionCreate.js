@@ -5,6 +5,7 @@ module.exports = {
 
 		// selectMenu handling
 		if (!interaction.isSelectMenu()) return;
+		// id: select_logo
 		if (interaction.customId === 'select_logo') {
 			interaction.update({ content: 'Du hast abgestimmt!', components: [] });
 			console.log(interaction.values);
