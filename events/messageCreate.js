@@ -2,7 +2,7 @@ module.exports = {
 	name: 'messageCreate',
 	execute(message) {
 		// collect 'test'
-		// if (message.author.bot) return;
+		if (message.author.bot) return;
 
 		// const channel = message.client.channels.cache.get('1009960570683928627');
 		// const filter = m => m.content.includes('immortal');
