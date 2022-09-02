@@ -7,7 +7,7 @@ module.exports = {
 	async execute(interaction) {
 		const data = { active: 'example' };
 		const channel = interaction.client.channels.cache.get('1009958552892346378');
-		fetch('https://immortal.zwoggel.org/api/public/playerlist', {
+		fetch('https://immortal.zwoggel.org/api/json/charlist', {
 			// eslint-disable-next-line no-inline-comments
 			method: 'POST', // or 'PUT'
 			headers: {
