@@ -34,6 +34,6 @@ module.exports = {
 
 		const catResult = await request('https://aws.random.cat/meow');
 		const { file } = await getJSONResponse(catResult.body);
-		interaction.editReply({ files: [file] });
+		interaction.reply({ files: [file] });
 	},
 };
