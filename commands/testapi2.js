@@ -16,10 +16,20 @@ module.exports = {
 			return JSON.parse(fullBody);
 		}
 		const immortalResult = request('https://immortal.zwoggel.org/api/json/charlist');
-		const { list } = await getJSONResponse(immortalResult.body);
-		if (!list.length) {
-			return interaction.editReply('ERROR - No results found');
+		const response = await getJSONResponse(immortalResult.body);
+		try {
+			const property_keys = Object.keys(response);
+			const property_values = Object.values(response);
+			const property_entries = Object.entries(response);
+
+			console.log('keys: ' + property_keys);
+			console.log('values: ' + property_values);
+			console.log('entries: ' + property_entries);
 		}
-		interaction.editReply(list[0]);
+		catch (error) {
+			console.log('there was a mistake happened');
+			console.log(error);
+		}
+		interaction.deferReply();
 	},
 };
