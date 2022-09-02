@@ -53,6 +53,7 @@ module.exports = {
 						for (let j = 0; j < property_entries_data[i].length; j++) {
 							console.log('element_entry: ' + i + ' : ' + j + ' = ' + property_entries_data[i][j]);
 							collection = [i][1];
+							// not working with stringyfy
 							console.log('collection: ' + JSON.stringify(collection));
 						}
 					}
