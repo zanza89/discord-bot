@@ -60,9 +60,8 @@ module.exports = {
 		console.log('discord_id_tag' + ' = ' + discord_id);
 		console.log('last_update_tag' + ' = ' + last_update);
 
-		const map = new Map();
-		map.set(Object.entries(data['984cefe0-5531-4690-919c-fa51d6009f48']));
+		const map = Object.entries(data['984cefe0-5531-4690-919c-fa51d6009f48']).map(el => el.discord_id);
 		console.log(map);
-		console.log(map.get(discord_id));
+		// console.log(map.get(discord_id));
 	},
 };
