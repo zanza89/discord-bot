@@ -74,6 +74,7 @@ module.exports = {
 			counter++;
 			console.log(counter);
 		}
+		console.log(charnames);
 
 		// const map = Object.entries(data).map(el => el.discord_id);
 		// console.log(map);
