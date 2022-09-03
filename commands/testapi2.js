@@ -65,7 +65,7 @@ module.exports = {
 		keys = Object.keys(data).splice(1);
 		console.log('keys: ' + keys + '\nsize: ' + keys.length);
 
-		let charnames = Array.apply(null, Array(100));
+		let charnames = Array.apply(null, Array(keys.length));
 		for (let i = 0; i <= keys.length ; i++) {
 			const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data[keys[i]]);
 			charnames = char_name[0, 1];
