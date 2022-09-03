@@ -33,11 +33,12 @@ module.exports = {
 		// interaction.deferReply('...');
 
 		const result = await request('https://immortal.zwoggel.org/api/json/charlist');
+		result.json();
 		const { data } = await getJSONResponse(result.body);
 		// if (!list.length) {
 		// 	return interaction.editReply('error 404');
 		// }
-		console.log('data: ' + data.message);
+		console.log('data: ' + data);
 		// interaction.reply('Object.values: ' + Object.values(char_name['Asgar']));
 		interaction.reply('logs');
 	},
