@@ -63,10 +63,10 @@ module.exports = {
 		// test arr
 		let keys = Array.apply(null, Array(100));
 		keys = Object.keys(data).splice(1);
-		console.log('keys: ' + keys + '\nsize: ' + keys.size);
+		console.log('keys: ' + keys + '\nsize: ' + keys.length);
 
 		// let discordIds = Array.apply(null, Array(100));
-		for (let i = 0; i <= keys.size ; i++) {
+		for (let i = 0; i <= keys.length ; i++) {
 			console.log('key = ' + keys[i]);
 		}
 
