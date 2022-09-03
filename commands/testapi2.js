@@ -66,10 +66,8 @@ module.exports = {
 		console.log('keys: ' + keys + '\nsize: ' + keys.length);
 
 		let charnames = Array.apply(null, Array(100));
-		let tempName = '';
 		for (let i = 0; i <= keys.length ; i++) {
-			tempName = '\'' + keys[i] + '\'';
-			const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data[tempName]);
+			const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data[keys[i]]);
 			charnames = char_name[0, 1];
 			console.log('active = ' + active, twink, paragon_level, discord_id, last_update);
 		}
