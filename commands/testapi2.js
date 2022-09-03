@@ -41,7 +41,7 @@ module.exports = {
 		// console.log('data: ' + data);
 		// console.log('server_paragon : ' + data.server_paragon);
 		// console.log('user1_name : ' + data.andieine);
-		const { char_name, active, twink, paragon_level, discord_id, last_update } = await getJSONResponse(result.data.body);
+		const { char_name, active, twink, paragon_level, discord_id, last_update } = await getJSONResponse(result.data);
 		console.log('char_name : ' + char_name);
 		console.log('active : ' + active);
 		console.log('twink : ' + twink);
