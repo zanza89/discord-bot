@@ -69,9 +69,9 @@ module.exports = {
 		for (let i = 0; i <= keys.length ; i++) {
 			const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data[keys[i]]);
 			charnames = char_name[0, 1];
-			console.log('active = ' + active, twink, paragon_level, discord_id, last_update);
+			console.log(active, twink, paragon_level, discord_id, last_update);
+			console.log('char_names: ' + charnames);
 		}
-		console.log('char_names: ' + charnames);
 
 		// const map = Object.entries(data).map(el => el.discord_id);
 		// console.log(map);
