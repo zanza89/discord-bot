@@ -82,6 +82,28 @@ module.exports = {
 
 		// merge arrays
 		const arrmerge = Array.from(Array(counter), () => new Array(2));
+
+		for (let i = 0; i < counter; i++) {
+			arrmerge[i] = charnames[i];
+			for (let j = 0; j < 1; j++) {
+				arrmerge[i][j] = discordids;
+			}
+		}
+
+		// check if element in array
+		// let el = 6;
+		// let flag = false;
+		// for (let i = 0; i < array.length; i++) {
+		// 	if (el === array[i]) {
+		// 		flag = 1;
+		// 	}
+		// }
+		// // Check if flag value changed.
+		// if (flag == true) {
+		// 	console.log('Element Found');
+		// } else {
+		// 	console.log('Element Not Found');
+		// }
 		console.log(arrmerge);
 
 		// const map = Object.entries(data).map(el => el.discord_id);
