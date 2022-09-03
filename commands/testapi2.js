@@ -88,7 +88,7 @@ module.exports = {
 		for (let i = 0; i < counter; i++) {
 			arrmerge[i] = charnames[i];
 			for (let j = 0; j < 1; j++) {
-				arrmerge[charnames[i]][j] = discordids[i];
+				arrmerge[charnames[i]][j] = 1;
 			}
 		}
 		console.log(arrmerge);
