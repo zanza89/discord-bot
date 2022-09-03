@@ -32,8 +32,13 @@ module.exports = {
 		// }
 		// interaction.deferReply('...');
 
-		const catResult = await request('https://immortal.zwoggel.org/api/json/charlist');
-		const { list } = await getJSONResponse(catResult.body);
-		interaction.reply({ list: [list] });
+		const result = await request('https://immortal.zwoggel.org/api/json/charlist');
+		const { char_name } = await getJSONResponse(result.body);
+		// if (!list.length) {
+		// 	return interaction.editReply('error 404');
+		// }
+		console.log('char_name: ' + char_name.asgar);
+		// interaction.reply('Object.values: ' + Object.values(char_name['Asgar']));
+		interaction.reply('logs');
 	},
 };
