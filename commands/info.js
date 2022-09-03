@@ -45,7 +45,8 @@ module.exports = {
 		else if (interaction.options.getSubcommand() === 'me') {
 			const result = await request('https://immortal.zwoggel.org/api/json/charlist');
 			const { message, success, current_time, data } = await getJSONResponse(result.body);
-			const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data['921a8e63-79b6-416d-a424-e62d74211633']);
+			const userkey = '921a8e63-79b6-416d-a424-e62d74211633';
+			const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data[userkey]);
 			const embed = new EmbedBuilder()
 				.setColor(0x3498DB)
 				.setTitle(char_name[0, 1].toString())

@@ -80,6 +80,10 @@ module.exports = {
 		console.log('charnames = ' + charnames);
 		console.log('discordids = ' + discordids);
 
+		// merge arrays
+		const arrmerge = Array.from(Array(counter), () => new Array(2));
+		console.log(arrmerge);
+
 		// const map = Object.entries(data).map(el => el.discord_id);
 		// console.log(map);
 		// console.log(map.get(discord_id));
