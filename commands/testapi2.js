@@ -81,7 +81,7 @@ module.exports = {
 		console.log('discordids = ' + discordids);
 
 		// merge arrays
-		const arrmerge = Array();
+		const arrmerge = [];
 		console.log(arrmerge);
 		console.table(arrmerge);
 
