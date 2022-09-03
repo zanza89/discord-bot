@@ -32,8 +32,8 @@ module.exports = {
 		// }
 		// interaction.deferReply('...');
 
-		const catResult = await request('https://aws.random.cat/meow');
-		const { file } = await getJSONResponse(catResult.body);
-		interaction.reply({ files: [file] });
+		const catResult = await request('https://immortal.zwoggel.org/api/json/charlist');
+		const { list } = await getJSONResponse(catResult.body);
+		interaction.reply({ list: [list] });
 	},
 };
