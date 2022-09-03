@@ -92,6 +92,7 @@ module.exports = {
 			}
 		}
 		console.log(arrmerge);
+		console.table(arrmerge);
 
 		// check if element in array
 		// let el = 6;
