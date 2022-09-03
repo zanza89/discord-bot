@@ -66,11 +66,13 @@ module.exports = {
 		console.log('keys: ' + keys + '\nsize: ' + keys.length);
 
 		let charnames = Array.apply(null, Array(100));
+		let tempName = '';
 		for (let i = 0; i <= keys.length ; i++) {
-			charnames = data[keys[i]].char_name;
+			tempName = '\' + keys[i] + \'';
+			charnames = data[tempName].char_name;
 			console.log('key = ' + keys[i]);
 		}
-		console.log('discord Ids: ' + charnames);
+		console.log('char_names: ' + charnames);
 
 		// const map = Object.entries(data).map(el => el.discord_id);
 		// console.log(map);
