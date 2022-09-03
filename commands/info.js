@@ -48,13 +48,13 @@ module.exports = {
 			const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data['984cefe0-5531-4690-919c-fa51d6009f48']);
 			const embed = new EmbedBuilder()
 				.setColor(0x3498DB)
-				.setTitle(char_name[0, 1])
+				.setTitle(char_name[0, 1].toString())
 				.addFields(
-					{ name: 'active', value: active[0, 1] },
-					{ name: 'twink', value: twink[0, 1] },
-					{ name: 'paragon level', value: paragon_level[0, 1] },
-					{ name: 'discord ID', value: discord_id[0, 1] },
-					{ name: 'last updated', value: last_update[0, 1] })
+					{ name: 'active', value: active[0, 1].toString() },
+					{ name: 'twink', value: twink[0, 1].toString() },
+					{ name: 'paragon level', value: paragon_level[0, 1].toString() },
+					{ name: 'discord ID', value: discord_id[0, 1].toString() },
+					{ name: 'last updated', value: last_update[0, 1].toString() })
 				.setTimestamp()
 				.setFooter({ text: 'message ' + message + '\u00A9' + 'success: ' + success + '\u00A9' + 'current time: ' + current_time });
 
