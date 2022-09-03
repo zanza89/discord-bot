@@ -63,5 +63,6 @@ module.exports = {
 		const map = new Map();
 		map.set(Object.entries(data['984cefe0-5531-4690-919c-fa51d6009f48']));
 		console.log(map);
+		console.log(map.get('discord_id'));
 	},
 };
