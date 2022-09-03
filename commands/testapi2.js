@@ -59,5 +59,9 @@ module.exports = {
 		console.log('paragon_level_tag' + ' = ' + paragon_level);
 		console.log('discord_id_tag' + ' = ' + discord_id);
 		console.log('last_update_tag' + ' = ' + last_update);
+
+		const map = new Map();
+		map.set(Object.entries(data['984cefe0-5531-4690-919c-fa51d6009f48']));
+		console.log(map);
 	},
 };
