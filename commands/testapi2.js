@@ -62,7 +62,7 @@ module.exports = {
 		console.log(discord_id[0, 1]);
 		// test arr
 		let keys = Array.apply(null, Array(100));
-		keys = Object.keys(data).splice(1);
+		keys = Object.keys(data).splice(1).slice(keys.length - 1);
 		console.log('keys: ' + keys + '\nsize: ' + keys.length);
 
 		// let discordIds = Array.apply(null, Array(100));
