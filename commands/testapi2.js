@@ -40,7 +40,7 @@ module.exports = {
 		console.log('current_time : ' + current_time);
 		console.log('data: ' + data);
 		console.log('server_paragon : ' + data.server_paragon);
-		console.log('user1_name : ' + data.andieine);
+		console.log('user1_name : ' + data[2].char_name);
 		// const { char_name, active, twink, paragon_level, discord_id, last_update } = await getJSONResponse(result.body);
 		// console.log('char_name : ' + char_name);
 		// console.log('active : ' + active);
