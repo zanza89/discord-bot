@@ -67,7 +67,7 @@ module.exports = {
 
 		let charnames = Array.apply(null, Array(100));
 		for (let i = 0; i <= keys.length ; i++) {
-			charnames = data[keys[i].toString()].char_name;
+			charnames = data[keys[i]].char_name;
 			console.log('key = ' + keys[i]);
 		}
 		console.log('discord Ids: ' + charnames);
