@@ -37,7 +37,7 @@ module.exports = {
 		// if (!list.length) {
 		// 	return interaction.editReply('error 404');
 		// }
-		console.log('data: ' + data);
+		console.log('data: ' + data.message);
 		// interaction.reply('Object.values: ' + Object.values(char_name['Asgar']));
 		interaction.reply('logs');
 	},
