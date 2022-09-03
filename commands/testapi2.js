@@ -85,9 +85,7 @@ module.exports = {
 
 		for (let i = 0; i < counter; i++) {
 			arrmerge[i] = charnames[i];
-			for (let j = 0; j < 1; j++) {
-				arrmerge[i, j] = discordids[i];
-			}
+			arrmerge[i][0] = discordids[i];
 		}
 
 		// check if element in array
