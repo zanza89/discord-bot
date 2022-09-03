@@ -68,7 +68,7 @@ module.exports = {
 		// let charnames = Array.apply(null, Array(100));
 		let tempName = '';
 		for (let i = 0; i <= keys.length ; i++) {
-			tempName = '\' + keys[i] + \'';
+			tempName = '\'' + keys[i] + '\'';
 			// charnames = data[tempName].char_name;
 			console.log('key = ' + keys[i] + '\ntempName : ' + tempName);
 		}
