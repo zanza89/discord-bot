@@ -81,12 +81,14 @@ module.exports = {
 		console.log('discordids = ' + discordids);
 
 		// merge arrays
-		const arrmerge = Array.from(Array(counter), () => new Array());
+		const arrmerge = Array.from(Array(counter), () => new Array(2));
+		console.log(arrmerge);
 
 		for (let i = 0; i < counter; i++) {
 			arrmerge[i] = charnames[i];
 			arrmerge[i][0] = discordids[i];
 		}
+		console.log(arrmerge);
 
 		// check if element in array
 		// let el = 6;
@@ -102,8 +104,6 @@ module.exports = {
 		// } else {
 		// 	console.log('Element Not Found');
 		// }
-		console.log(arrmerge);
-
 		// const map = Object.entries(data).map(el => el.discord_id);
 		// console.log(map);
 		// console.log(map.get(discord_id));
