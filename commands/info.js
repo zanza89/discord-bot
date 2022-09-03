@@ -56,7 +56,7 @@ module.exports = {
 					{ name: 'discord ID', value: discord_id[0, 1].toString() },
 					{ name: 'last updated', value: last_update[0, 1].toString() })
 				.setTimestamp()
-				.setFooter({ text: 'message ' + message + '\u00A9' + 'success: ' + success + '\u00A9' + 'current time: ' + current_time });
+				.setFooter({ text: 'message ' + message + 'success: ' + success + 'current time: ' + current_time });
 
 			interaction.reply({ embeds: [embed] });
 		}
