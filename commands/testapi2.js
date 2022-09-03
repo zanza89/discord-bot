@@ -12,7 +12,7 @@ module.exports = {
 			for await (const data of body) {
 				fullBody += data.toString();
 			}
-			// fullBody.replace('984cefe0-5531-4690-919c-fa51d6009f48', 'andieine');
+			fullBody.replace('current_time', 'currenttime');
 			return JSON.parse(fullBody);
 		}
 		// const immortalResult = await request('https://immortal.zwoggel.org/api/json/charlist');
@@ -33,21 +33,21 @@ module.exports = {
 		// interaction.deferReply('...');
 
 		const result = await request('https://immortal.zwoggel.org/api/json/charlist');
-		const { message, success, current_time, data } = await getJSONResponse(result.body).replace('current_time', 'currenttime');
+		const { message, success, current_time, data } = await getJSONResponse(result.body);
 
 		console.log('message : ' + message);
 		console.log('success : ' + success);
 		console.log('current_time : ' + current_time);
 		console.log('data: ' + data);
 		console.log('server_paragon : ' + data.server_paragon);
-		const { char_name, active, twink, paragon_level, discord_id, last_update } = data;
-		console.log('user1_name : ' + char_name);
-		console.log('char_name : ' + char_name);
-		console.log('active : ' + active);
-		console.log('twink : ' + twink);
-		console.log('paragon_level : ' + paragon_level);
-		console.log('discord_id : ' + discord_id);
-		console.log('last_update : ' + last_update);
+		// const { char_name, active, twink, paragon_level, discord_id, last_update } = data;
+		// console.log('user1_name : ' + char_name);
+		// console.log('char_name : ' + char_name);
+		// console.log('active : ' + active);
+		// console.log('twink : ' + twink);
+		// console.log('paragon_level : ' + paragon_level);
+		// console.log('discord_id : ' + discord_id);
+		// console.log('last_update : ' + last_update);
 		interaction.reply('logs');
 	},
 };
