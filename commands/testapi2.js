@@ -52,7 +52,7 @@ module.exports = {
 		+ '\nparagon level : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].paragon_level
 		+ '\ndiscordId : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].discord_id
 		+ '\nlast updated : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].last_update);
-		const [keys] = Object.keys(data);
+		const [paragon, keys] = Object.keys(data);
 		const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data['984cefe0-5531-4690-919c-fa51d6009f48']);
 		console.log('char_name_tag' + ' = ' + char_name);
 		console.log('active_tag' + ' = ' + active);
@@ -61,6 +61,7 @@ module.exports = {
 		console.log('discord_id_tag' + ' = ' + discord_id);
 		console.log('last_update_tag' + ' = ' + last_update);
 		console.log(discord_id[0, 1]);
+		console.log('paragon: ' + paragon);
 		console.log('keys: ' + keys);
 
 		// const map = Object.entries(data).map(el => el.discord_id);
