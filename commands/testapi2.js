@@ -41,6 +41,7 @@ module.exports = {
 		console.log('success: ' + success);
 		console.log('current_time: ' + current_time);
 		console.log('data: ' + data);
+		console.log('server_paragon: ' + data.server_paragon);
 		// interaction.reply('Object.values: ' + Object.values(char_name['Asgar']));
 		interaction.reply('logs');
 	},
