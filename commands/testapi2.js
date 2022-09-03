@@ -39,15 +39,18 @@ module.exports = {
 		console.log('current_time : ' + current_time);
 		console.log('data: ' + data);
 		console.log('server_paragon : ' + data.server_paragon);
-		console.log('test one: ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].char_name);
-		// const { char_name, active, twink, paragon_level, discord_id, last_update } = data;
-		// console.log('user1_name : ' + char_name);
-		// console.log('char_name : ' + char_name);
-		// console.log('active : ' + active);
-		// console.log('twink : ' + twink);
-		// console.log('paragon_level : ' + paragon_level);
-		// console.log('discord_id : ' + discord_id);
-		// console.log('last_update : ' + last_update);
-		interaction.reply('logs');
+		console.log('char_name: ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].char_name);
+		console.log('active : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].active);
+		console.log('twink : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].twink);
+		console.log('paragon_level : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].paragon_level);
+		console.log('discord_id : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].discord_id);
+		console.log('last_update : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].last_update);
+		interaction.reply(''
+		+ 'char_name : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].char_name
+		+ '\nactive : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].active
+		+ '\ntwink : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].twink
+		+ '\nparagon level : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].paragon_level
+		+ '\ndiscordId : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].discord_id
+		+ '\nlast updated : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].last_update);
 	},
 };
