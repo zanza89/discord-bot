@@ -31,17 +31,16 @@ module.exports = {
 		// 	console.log(error);
 		// }
 		// interaction.deferReply('...');
+
 		const result = await request('https://immortal.zwoggel.org/api/json/charlist');
-		const { message, success, current_time, data } = await getJSONResponse(result.body);
-		// if (!list.length) {
-		// 	return interaction.editReply('error 404');
-		// }
-		console.log('message : ' + message);
-		console.log('success : ' + success);
-		console.log('current_time : ' + current_time);
-		console.log('data: ' + data);
-		console.log('server_paragon : ' + data.server_paragon);
-		console.log('user1_name : ' + data.andieine);
+		// const { message, success, current_time, data } = await getJSONResponse(result.body);
+
+		// console.log('message : ' + message);
+		// console.log('success : ' + success);
+		// console.log('current_time : ' + current_time);
+		// console.log('data: ' + data);
+		// console.log('server_paragon : ' + data.server_paragon);
+		// console.log('user1_name : ' + data.andieine);
 		const { char_name, active, twink, paragon_level, discord_id, last_update } = await getJSONResponse(result.body);
 		console.log('char_name : ' + char_name);
 		console.log('active : ' + active);
