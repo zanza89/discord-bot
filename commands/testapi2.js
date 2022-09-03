@@ -33,7 +33,7 @@ module.exports = {
 		// interaction.deferReply('...');
 
 		const result = await request('https://immortal.zwoggel.org/api/json/charlist');
-		const { message, success, current_time, data } = await getJSONResponse(result.body).stringify().replace('current_time', 'currenttime');
+		const { message, success, current_time, data } = await getJSONResponse(result.body).replace('current_time', 'currenttime');
 
 		console.log('message : ' + message);
 		console.log('success : ' + success);
