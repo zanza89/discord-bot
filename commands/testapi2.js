@@ -83,10 +83,11 @@ module.exports = {
 		// merge arrays
 		const arrmerge = Array.from(Array(counter), () => new Array(2));
 		console.log(arrmerge);
+		console.table(arrmerge);
 
 		for (let i = 0; i < counter; i++) {
 			arrmerge[i] = charnames[i];
-			for (let j = 1; j < 2; j++) {
+			for (let j = 2; j == 2; j++) {
 				arrmerge[i][j] = discordids[i];
 			}
 		}
