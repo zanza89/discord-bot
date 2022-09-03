@@ -90,7 +90,7 @@ module.exports = {
 		}
 		console.log(arrmerge);
 		for (let j = 0; j < counter; j++) {
-			arrmerge[j][1] = discordids[j];
+			arrmerge[j, 0] = discordids[j];
 		}
 		console.table(arrmerge);
 
