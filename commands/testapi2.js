@@ -58,6 +58,6 @@ module.exports = {
 		console.log('twink_tag' + ' = ' + twink);
 		console.log('paragon_level_tag' + ' = ' + paragon_level);
 		console.log('discord_id_tag' + ' = ' + discord_id);
-		console.log('last_update_tag'_ + ' = ' + last_update);
+		console.log('last_update_tag' + ' = ' + last_update);
 	},
 };
