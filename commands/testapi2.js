@@ -52,7 +52,8 @@ module.exports = {
 		+ '\nparagon level : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].paragon_level
 		+ '\ndiscordId : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].discord_id
 		+ '\nlast updated : ' + data['984cefe0-5531-4690-919c-fa51d6009f48'].last_update);
-		const arr = Object.entries(data['984cefe0-5531-4690-919c-fa51d6009f48']);
+		const [arr, value] = Object.entries(data['984cefe0-5531-4690-919c-fa51d6009f48']);
 		console.log('arr = ' + arr);
+		console.log('arr = ' + value);
 	},
 };
