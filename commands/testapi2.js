@@ -87,11 +87,11 @@ module.exports = {
 
 		for (let i = 0; i < counter; i++) {
 			arrmerge[i] = charnames[i];
-			for (let j = 0; j < 1; j++) {
-				arrmerge[charnames[i]][j] = 1;
-			}
 		}
 		console.log(arrmerge);
+		for (let j = 0; j < counter; j++) {
+			arrmerge[j][0] = discordids[j];
+		}
 		console.table(arrmerge);
 
 		// check if element in array
