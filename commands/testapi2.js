@@ -60,11 +60,12 @@ module.exports = {
 		// console.log('discord_id_tag' + ' = ' + discord_id);
 		// console.log('last_update_tag' + ' = ' + last_update);
 		// console.log(discord_id[0, 1]);
-		// test arr
+		// keys array
 		let keys = Array.apply(null, Array(100));
 		keys = Object.keys(data).splice(1);
 		console.log('keys: ' + keys + '\nsize: ' + keys.length);
 		let counter = 0;
+		// char_names array
 		const charnames = Array(keys.length);
 		for (let i = 0; i < keys.length ; i++) {
 			const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data[keys[i]]);
