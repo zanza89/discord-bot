@@ -12,7 +12,7 @@ module.exports = {
 			for await (const data of body) {
 				fullBody += data.toString();
 			}
-
+			fullBody.replace('984cefe0-5531-4690-919c-fa51d6009f48', 'andieine');
 			return JSON.parse(fullBody);
 		}
 		// const immortalResult = await request('https://immortal.zwoggel.org/api/json/charlist');
@@ -31,7 +31,6 @@ module.exports = {
 		// 	console.log(error);
 		// }
 		// interaction.deferReply('...');
-		const char_key = '984cefe0-5531-4690-919c-fa51d6009f48';
 		const result = await request('https://immortal.zwoggel.org/api/json/charlist');
 		const { message, success, current_time, data } = await getJSONResponse(result.body);
 		// if (!list.length) {
@@ -42,7 +41,7 @@ module.exports = {
 		console.log('current_time: ' + current_time);
 		console.log('data: ' + data);
 		console.log('server_paragon: ' + data.server_paragon);
-		console.log('user1_name: ' + data.char_key.char_name);
+		console.log('user1_name: ' + data.andieine.char_name);
 		// interaction.reply('Object.values: ' + Object.values(char_name['Asgar']));
 		interaction.reply('logs');
 	},
