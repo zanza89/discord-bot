@@ -72,7 +72,7 @@ module.exports = {
 		for (let i = 0; i < keys.length ; i++) {
 			const [char_name, active, twink, paragon_level, discord_id, last_update] = Object.entries(data[keys[i]]);
 			charnames.push(char_name[0, 1]);
-			discordids.push(char_name[0, 1]);
+			discordids.push(discord_id[0, 1]);
 			console.log(active, twink, paragon_level, discord_id, last_update);
 			counter++;
 		}
