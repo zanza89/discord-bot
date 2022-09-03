@@ -63,7 +63,7 @@ module.exports = {
 		// test arr
 		let keys = Array.apply(null, Array(100));
 		keys = Object.keys(data);
-		console.log('keys: ' + keys[1]);
+		console.log('keys: ' + keys[100]);
 
 		// const map = Object.entries(data).map(el => el.discord_id);
 		// console.log(map);
