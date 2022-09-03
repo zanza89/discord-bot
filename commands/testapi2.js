@@ -59,7 +59,7 @@ module.exports = {
 		console.log('paragon_level_tag' + ' = ' + paragon_level);
 		console.log('discord_id_tag' + ' = ' + discord_id);
 		console.log('last_update_tag' + ' = ' + last_update);
-		console.log(char_name[0, 0]);
+		console.log(discord_id[0, 1]);
 
 		// const map = Object.entries(data).map(el => el.discord_id);
 		// console.log(map);
