@@ -33,16 +33,14 @@ module.exports = {
 		// interaction.deferReply('...');
 
 		const result = await request('https://immortal.zwoggel.org/api/json/charlist');
-		const { message, success, current_time, data } = await getJSONResponse(result.body);
+		const { message, success, current_time, data } = await getJSONResponse(result.body).stringify().replace('current_time', 'currenttime');
 
 		console.log('message : ' + message);
 		console.log('success : ' + success);
 		console.log('current_time : ' + current_time);
 		console.log('data: ' + data);
 		console.log('server_paragon : ' + data.server_paragon);
-		const uuid = '984cefe0-5531-4690-919c-fa51d6009f48';
-		uuid.stringify();
-		const { char_name, active, twink, paragon_level, discord_id, last_update } = data.uuid;
+		const { char_name, active, twink, paragon_level, discord_id, last_update } = data;
 		console.log('user1_name : ' + char_name);
 		console.log('char_name : ' + char_name);
 		console.log('active : ' + active);
