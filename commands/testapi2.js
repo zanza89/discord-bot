@@ -66,7 +66,7 @@ module.exports = {
 		console.log('keys: ' + keys);
 
 		// let discordIds = Array.apply(null, Array(100));
-		for (let i = keys; i < keys.size ; i++) {
+		for (let i = 0; i <= keys.size ; i++) {
 			console.log('key = ' + keys[i]);
 		}
 
