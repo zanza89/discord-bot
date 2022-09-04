@@ -100,16 +100,16 @@ module.exports = {
 			value,
 		}) {
 			return Array.from({ length:rows }, () => (
-				Array.from({ length:columns }, () => Array.push(value))
+				Array.from({ length:columns }, () => value)
 			));
 		}
-		let newarray = [];
+		// let newarray = [];
 		for (let i = 0; i < charnames.length; i++) {
-			newarray = createAndFillTwoDArray({ rows:charnames.length, columns:2, value: charnames[i] });
+			console.table(createAndFillTwoDArray({ rows:charnames.length, columns:2, value: charnames[i] }));
 
 		}
 
-		console.table(newarray);
+		// console.table(newarray);
 
 		// check if element in array
 		// let el = 6;
