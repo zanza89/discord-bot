@@ -109,7 +109,7 @@ module.exports = {
 
 		}
 
-		console.log(newarray);
+		console.table(newarray);
 
 		// check if element in array
 		// let el = 6;
