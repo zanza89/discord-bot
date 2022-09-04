@@ -103,7 +103,7 @@ module.exports = {
 				Array.from({ length:columns }, () => value)
 			));
 		}
-		let newarray = [];
+		const newarray = [];
 		for (let i = 0; i < charnames.length; i++) {
 			newarray.push(createAndFillTwoDArray({ rows:charnames.length, columns:2, value: charnames[i] }));
 
