@@ -105,7 +105,7 @@ module.exports = {
 		}
 		let newarray = [];
 		for (let i = 0; i < charnames.length; i++) {
-			newarray = createAndFillTwoDArray({ rows:charnames.length, columns:2, value: charnames[i] });
+			newarray.push(createAndFillTwoDArray({ rows:charnames.length, columns:2, value: charnames[i] }));
 
 		}
 
