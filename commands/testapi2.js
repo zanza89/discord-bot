@@ -85,10 +85,10 @@ module.exports = {
 		console.log(arrmerge);
 		console.table(arrmerge);
 		console.log(charnames[0]);
-		for (let i = 0; i < counter; i++) {
+		for (let i = 0; i < charnames.length; i++) {
 			arrmerge[i] = charnames[i];
-			for (let j = 1; j < 2; j++) {
-				arrmerge[i, j] = discordids[i];
+			for (let j = 1; j < charnames[i].length; j++) {
+				arrmerge[i][j] = discordids[i];
 			}
 		}
 		console.log(arrmerge);
