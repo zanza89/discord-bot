@@ -81,7 +81,7 @@ module.exports = {
 		console.log('discordids = ' + discordids);
 
 		// merge arrays
-		const arrmerge = [['a', 'b'], ['c', 'd']];
+		const arrmerge = [[], []];
 		console.log(arrmerge);
 		console.table(arrmerge);
 		console.log(charnames[0]);
@@ -93,6 +93,18 @@ module.exports = {
 		}
 		console.log(arrmerge);
 		console.table(arrmerge);
+
+		function createAndFillTwoDArray({
+			rows,
+			columns,
+			defaultValue,
+		}) {
+			return Array.from({ length:rows }, () => (
+				Array.from({ length:columns }, () => defaultValue)
+			));
+		}
+
+		console.log(createAndFillTwoDArray({ rows:3, columns:9, defaultValue: 'q' }));
 
 		// check if element in array
 		// let el = 6;
