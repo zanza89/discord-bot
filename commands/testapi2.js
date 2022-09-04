@@ -100,12 +100,12 @@ module.exports = {
 			value,
 		}) {
 			return Array.from({ length:rows }, () => (
-				Array.from({ length:columns }, () => value)
+				Array.from({ length:columns }, () => Array.push(value))
 			));
 		}
-		const newarray = [];
+		let newarray = [];
 		for (let i = 0; i < charnames.length; i++) {
-			newarray.push(createAndFillTwoDArray({ rows:charnames.length, columns:2, value: charnames[i] }));
+			newarray = createAndFillTwoDArray({ rows:charnames.length, columns:2, value: charnames[i] });
 
 		}
 
