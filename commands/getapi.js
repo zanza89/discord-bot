@@ -4,7 +4,7 @@ const { fs } = require('fs');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('testapi2')
+		.setName('getapi')
 		.setDescription('test2 to fetch da api json using undici'),
 	async execute(interaction) {
 		async function getJSONResponse(body) {
