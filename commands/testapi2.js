@@ -97,14 +97,19 @@ module.exports = {
 		function createAndFillTwoDArray({
 			rows,
 			columns,
-			defaultValue,
+			value,
 		}) {
 			return Array.from({ length:rows }, () => (
-				Array.from({ length:columns }, () => defaultValue)
+				Array.from({ length:columns }, () => value)
 			));
 		}
+		let newarray = [];
+		for (let i = 0; i < charnames.length; i++) {
+			newarray = createAndFillTwoDArray({ rows:charnames.length, columns:2, value: 'q' });
 
-		console.log(createAndFillTwoDArray({ rows:3, columns:9, defaultValue: 'q' }));
+		}
+
+		console.log(newarray);
 
 		// check if element in array
 		// let el = 6;
