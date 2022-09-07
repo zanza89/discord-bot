@@ -12,24 +12,20 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		async function getJSONResponse(targetId) {
-			const api = 'https://immortal.zwoggel.org/api/json/reset_pw';
-			const rsp = await fetch(api, {
+			const params = {
+				discord_id: targetId,
+				auth_token: 'ThisIsAToken',
+			};
+			const options = {
 				method: 'POST',
-				headers: {
-					'content-type': 'application/json',
-				},
-				body: JSON.stringify({
-					discord_id: targetId,
-					auth_token: 'ThisIsAToken',
-				}),
-			});
-			if (rsp.status !== 200) {
-				console.log(rsp.status, 'Anfrage fehlgeschlagen');
-				return;
-			}
-			const json = await rsp.json();
-			console.log(rsp.status, json);
-			return JSON.parse(rsp);
+				body: JSON.stringify(params),
+			};
+			fetch('https://immortal.zwoggel.org/api/json/reset_pw', options)
+				.then(response =>
+					response.json())
+				.then(response => {
+					return response;
+				});
 		}
 		const targetId = interaction.options.getUser('target').id;
 		const { message, success, current_time, data } = await getJSONResponse(targetId);
