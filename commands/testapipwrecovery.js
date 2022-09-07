@@ -38,8 +38,12 @@ module.exports = {
 		}
 		const targetId = interaction.options.getUser('target').id;
 		const data = destructure(targetId);
-		Object.entries(data['code'[0]]);
-		console.log('data : ' + data);
+		// date keys
+		const datakeys = Object.keys(data);
+		console.log('data keys: ' + datakeys);
+		// data enries
+		const dataentries = Object.entries(data['code'[0]]);
+		console.log('data entries: ' + dataentries);
 		// interaction.reply('Success: ' + success + '\nMessage: ' + message + '\nCurrent_Time: ' + current_time + '\nData: ' + data + '\nCode: ' + code);
 		interaction.reply('see logs');
 	},
