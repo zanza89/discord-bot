@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { fetch } = require('undici');
+const { Readable } = require('node:stream');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -19,9 +20,10 @@ module.exports = {
 			const { statusCode, headers, trailers, body } = await fetch(url_api, { body: data, method: 'POST' }) || {};
 			console.log('response received status Code: ', statusCode);
 			console.log('headers: ', headers);
-			const json = body.text();
+			const readableWebStream = body;
+			const readableNodeStream = Readable.fromWeb(readableWebStream);
 			console.log('trailers: ', trailers);
-			console.log('json: ', json);
+			console.log('json: ', readableNodeStream);
 			// doesnt work because body has been called already? cant return?
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
