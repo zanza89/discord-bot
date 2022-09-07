@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { fetch } = require('undici');
+const { request } = require('undici');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -11,40 +11,25 @@ module.exports = {
 				.setDescription('the user targeted')
 				.setRequired(true)),
 	async execute(interaction) {
-		async function getJSONResponse(targetId) {
-			const params = {
-				discord_id: targetId,
-				auth_token: 'ThisIsAToken',
-			};
-			const options = {
-				method: 'POST',
-				body: JSON.stringify(params),
-			};
-			fetch('https://immortal.zwoggel.org/api/json/reset_pw', options)
-				.then(response =>
-					response.json())
-				.then(response => {
-					console.log('Respone: ' + response);
-					return response;
-				});
+		async function destructure(url_api) {
+			const { statusCode, headers, trailers, body } = await request(url_api) || {};
+			console.log('response received ', statusCode);
+			console.log('headers: ', headers);
+			for await (const data of body) {
+				console.log('data', data);
+			}
+			console.log('trailers', trailers);
 		}
-		async function destructure(targetId) {
-			const { message, success, current_time, data } = await getJSONResponse(targetId) || {};
-			console.log(message);
-			console.log(success);
-			console.log(current_time);
-			console.log(data);
-			return data;
-		}
-		const targetId = interaction.options.getUser('target').id;
-		const data = destructure(targetId);
+		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
+		// const targetId = interaction.options.getUser('target').id;
+		destructure(url_api);
 		// date keys
-		let datakeys = Array.apply(null, Array(100));
-		datakeys = Object.keys(data);
-		console.table('data keys: ' + datakeys);
-		// data enries
-		const dataentries = Object.entries(data['code'[0]]);
-		console.log('data entries: ' + dataentries);
+		// let datakeys = Array.apply(null, Array(100));
+		// datakeys = Object.keys(data);
+		// console.table('data keys: ' + datakeys);
+		// // data enries
+		// const dataentries = Object.entries(data['code'[0]]);
+		// console.log('data entries: ' + dataentries);
 		// interaction.reply('Success: ' + success + '\nMessage: ' + message + '\nCurrent_Time: ' + current_time + '\nData: ' + data + '\nCode: ' + code);
 		interaction.reply('see logs');
 	},
