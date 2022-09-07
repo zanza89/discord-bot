@@ -31,6 +31,7 @@ module.exports = {
 			console.log(rsp.status, json);
 		}
 		const targetId = interaction.options.getUser('target').id;
-		getJSONResponse(targetId);
+		const response = getJSONResponse(targetId);
+		interaction.reply('Response: ' + response.status);
 	},
 };
