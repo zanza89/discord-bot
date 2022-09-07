@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { fetch } = require('undici');
-import { Readable } from 'node:stream';
+const { Readable } = require('stream');
 
 module.exports = {
 	data: new SlashCommandBuilder()
