@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { request, fetch } = require('undici');
+const { fetch } = require('undici');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -12,25 +12,24 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		async function destructure(url_api) {
-			const { statusCode, headers, body } = await request(url_api) || {};
+			const data = {
+				discord_id: targetId,
+				auth_token: 'ThisIsAToken',
+			};
+			const { statusCode, headers, body } = await fetch(url_api, { body: data, method: 'POST' }) || {};
 			console.log('response received status Code: ', statusCode);
 			console.log('headers: ', headers);
-			for await (const data of body) {
-				console.log('data buffer: ', data);
+			for await (const tokendata of body) {
+				console.log('data buffer: ', tokendata);
 			}
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
 		destructure(url_api);
-		const data = {
-			discord_id: targetId,
-			auth_token: 'ThisIsAToken',
-		};
 
-		const result = await fetch(url_api, { body: data, method: 'POST' });
-		for await (const data of body) {
-            console.log('data buffer: ', data);
-		console.log('result ', result);
+		// const result = await fetch(url_api, { body: data, method: 'POST' });
+		// console.log('data sent: ', data);
+		// console.log('result ', result);
 		// date keys
 		// let datakeys = Array.apply(null, Array(100));
 		// datakeys = Object.keys(data);
