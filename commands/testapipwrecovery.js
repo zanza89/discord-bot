@@ -19,7 +19,7 @@ module.exports = {
 			const { statusCode, headers, trailers, body } = await fetch(url_api, { body: data, method: 'POST' }) || {};
 			console.log('response received status Code: ', statusCode);
 			console.log('headers: ', headers);
-			const json = await body.json();
+			const json = body;
 			console.log('trailers: ', trailers);
 			console.log('json: ', json);
 			// doesnt work because body has been called already? cant return?
