@@ -19,7 +19,9 @@ module.exports = {
 			const { statusCode, headers, body } = await fetch(url_api, { body: data, method: 'POST' }) || {};
 			console.log('response received status Code: ', statusCode);
 			console.log('headers: ', headers);
-			console.log('data buffer: ', await body.json());
+			for await (const tokendata of body) {
+				console.log('data buffer: ', tokendata.json());
+			}
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
