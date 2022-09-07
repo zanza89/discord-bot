@@ -30,7 +30,7 @@ module.exports = {
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
-		const answer = await destructure(url_api).json();
+		const answer = await destructure(url_api);
 		console.log('answer: ', answer);
 
 		// date keys
