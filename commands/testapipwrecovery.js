@@ -39,8 +39,9 @@ module.exports = {
 		const targetId = interaction.options.getUser('target').id;
 		const data = destructure(targetId);
 		// date keys
-		const datakeys = Object.keys(data);
-		console.log('data keys: ' + datakeys);
+		let datakeys = Array.apply(null, Array(100));
+		datakeys = Object.keys(data);
+		console.table('data keys: ' + datakeys);
 		// data enries
 		const dataentries = Object.entries(data['code'[0]]);
 		console.log('data entries: ' + dataentries);
