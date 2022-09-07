@@ -19,6 +19,7 @@
     "discord.js": "^14.3.0",
     "fs.js": "^0.0.1",
     "node-fetch": "^3.2.10",
+    "stream": "^0.0.2",
     "undici": "^5.10.0"
   },
   "devDependencies": {
