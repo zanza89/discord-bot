@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { fetch, request } = require('undici');
+const { fetch } = require('undici');
 
 module.exports = {
 	data: new SlashCommandBuilder()
