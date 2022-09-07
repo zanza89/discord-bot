@@ -22,6 +22,7 @@ module.exports = {
 			console.log('headers: ', headers);
 			for await (const tokendata of body) {
 				fullBody += tokendata.toString();
+				console.log ('token: ', fullBody);
 			}
 			return fullBody;
 		}
