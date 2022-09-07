@@ -38,7 +38,7 @@ module.exports = {
 		}
 		const targetId = interaction.options.getUser('target').id;
 		const data = destructure(targetId);
-		Object.entries(data[0]);
+		Object.entries(data['code'[0]]);
 		console.log('data : ' + data);
 		// interaction.reply('Success: ' + success + '\nMessage: ' + message + '\nCurrent_Time: ' + current_time + '\nData: ' + data + '\nCode: ' + code);
 		interaction.reply('see logs');
