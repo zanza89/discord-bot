@@ -31,7 +31,7 @@ module.exports = {
 			console.log(rsp.status, json);
 		}
 		const targetId = interaction.options.getUser('target').id;
-		const response = getJSONResponse(targetId);
-		interaction.reply('Response: ' + response.status);
+		const { success, message, current_time } = await getJSONResponse(targetId);
+		interaction.reply('Success: ' + success + '\nMessage: ' + message + '\nCurrent_Time: ' + current_time);
 	},
 };
