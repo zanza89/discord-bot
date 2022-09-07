@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { fetch } = require('undici');
+const { fetch, request } = require('undici');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -29,6 +29,7 @@ module.exports = {
 			}
 			const json = await rsp.json();
 			console.log(rsp.status, json);
+			return JSON.parse(rsp);
 		}
 		const targetId = interaction.options.getUser('target').id;
 		const { message, success, current_time, data } = await getJSONResponse(targetId);
