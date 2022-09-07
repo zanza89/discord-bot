@@ -18,6 +18,7 @@ module.exports = {
 			for await (const data of body) {
 				console.log('data', data);
 			}
+			console.log('data json: ', await body.json());
 			console.log('trailers', trailers);
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
