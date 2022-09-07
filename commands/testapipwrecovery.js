@@ -28,7 +28,8 @@ module.exports = {
 		};
 
 		const result = await fetch(url_api, { body: data, method: 'POST' });
-		console.log('data sent: ', data);
+		for await (const data of body) {
+            console.log('data buffer: ', data);
 		console.log('result ', result);
 		// date keys
 		// let datakeys = Array.apply(null, Array(100));
