@@ -21,9 +21,9 @@ module.exports = {
 				.then((statusCode) => {
 					console.log('response received status Code: ', statusCode);
 				})
-				.then((response) => response.headers)
-				.then((headers) => {
-					console.log('headers: ', headers);
+				.then((response) => response.message)
+				.then((message) => {
+					console.log('message: ', message);
 				})
 				.then((response) => response.body)
 				.then((body) => {
