@@ -12,13 +12,13 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		async function destructure(url_api) {
-			const { statusCode, headers, trailers, body } = await request(url_api) || {};
-			console.log('response received ', statusCode);
+			const { statusCode, headers, message, body } = await request(url_api) || {};
+			console.log('response received status Code: ', statusCode);
 			console.log('headers: ', headers);
 			for await (const data of body) {
-				console.log('data', data);
+				console.log('data buffer: ', data);
 			}
-			console.log('trailers', trailers);
+			console.log('message: ', message);
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
