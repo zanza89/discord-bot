@@ -22,11 +22,10 @@ module.exports = {
 			console.log('headers: ', headers);
 			for await (const tokendata of body) {
 				fullBody += tokendata.toString();
-				console.log ('token: ', fullBody);
 			}
 			console.log('trailers: ', trailers);
 			// doesnt work because body has been called already? cant return?
-			return fullBody;
+			return JSON.parse(fullBody);
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
