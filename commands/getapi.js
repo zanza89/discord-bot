@@ -19,7 +19,7 @@ module.exports = {
 		const filePath = '/data';
 		const url = 'https://immortal.zwoggel.org/api/json/charlist';
 		const result = await request(url);
-		const { message, success, current_time, data } = await getJSONResponse(result.body);
+		const { message, success, current_time, data } = await getJSONResponse(result.body) || {};
 		interaction.reply('api fetched from url' + url + '\nmessage : ' + message + '\nsuccess : ' + success + '\nserver_time' + current_time);
 
 		let keys = Array.apply(null, Array(100));
