@@ -24,6 +24,7 @@ module.exports = {
 				.then(response =>
 					response.json())
 				.then(response => {
+					console.log('Respone: ' + response);
 					return response;
 				});
 		}
