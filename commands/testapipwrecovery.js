@@ -29,8 +29,16 @@ module.exports = {
 				});
 		}
 		const targetId = interaction.options.getUser('target').id;
-		const { message, success, current_time, data } = await getJSONResponse(targetId);
-		const [code] = Object.entries(data[code]);
-		interaction.reply('Success: ' + success + '\nMessage: ' + message + '\nCurrent_Time: ' + current_time + '\nData: ' + data + '\nCode: ' + code);
+		async function destructure(arg) {
+			const { message, success, current_time, data } = await getJSONResponse(arg) || {};
+			console.log(message);
+			console.log(success);
+			console.log(current_time);
+			console.log(data);
+		}
+		destructure(targetId);
+		// const [code] = Object.entries(data[code]);
+		// interaction.reply('Success: ' + success + '\nMessage: ' + message + '\nCurrent_Time: ' + current_time + '\nData: ' + data + '\nCode: ' + code);
+		interaction.reply('see logs');
 	},
 };
