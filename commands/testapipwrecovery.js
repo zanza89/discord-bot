@@ -27,8 +27,9 @@ module.exports = {
 			auth_token: 'ThisIsAToken',
 		};
 
-		await fetch(url_api, { body: data, method: 'POST' });
-		console.log('data: ', data);
+		const result = await fetch(url_api, { body: data, method: 'POST' });
+		console.log('data sent: ', data);
+		console.log('result ', result);
 		// date keys
 		// let datakeys = Array.apply(null, Array(100));
 		// datakeys = Object.keys(data);
