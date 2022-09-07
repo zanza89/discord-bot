@@ -27,10 +27,9 @@ module.exports = {
 				})
 				.then((response) => response.body)
 				.then((body) => {
-					const json = body;
-					console.log('json: ', json);
+					const answer = body.json();
+					console.log(answer);
 				});
-			// doesnt work because body has been called already? cant return?
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
