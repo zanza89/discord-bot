@@ -17,19 +17,21 @@ module.exports = {
 				discord_id: targetId,
 				auth_token: 'ThisIsAToken',
 			};
-			const { statusCode, headers, body } = await fetch(url_api, { body: data, method: 'POST' }) || {};
+			const { statusCode, headers, trailers, body } = await fetch(url_api, { body: data, method: 'POST' }) || {};
 			console.log('response received status Code: ', statusCode);
 			console.log('headers: ', headers);
 			for await (const tokendata of body) {
 				fullBody += tokendata.toString();
 				console.log ('token: ', fullBody);
 			}
+			console.log('trailers: ', trailers);
+			// doesnt work because body has been called already? cant return?
 			return fullBody;
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
 		const answer = destructure(url_api);
-		console.log(answer);
+		console.log('answer: ', answer);
 
 		// date keys
 		// let datakeys = Array.apply(null, Array(100));
