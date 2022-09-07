@@ -12,7 +12,6 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		async function destructure(url_api) {
-			let fullBody = '';
 			const data = {
 				discord_id: targetId,
 				auth_token: 'ThisIsAToken',
@@ -20,17 +19,14 @@ module.exports = {
 			const { statusCode, headers, trailers, body } = await fetch(url_api, { body: data, method: 'POST' }) || {};
 			console.log('response received status Code: ', statusCode);
 			console.log('headers: ', headers);
-			for await (const tokendata of body) {
-				fullBody += tokendata.toString();
-			}
+			const json = await body.json();
 			console.log('trailers: ', trailers);
+			console.log('json: ', json);
 			// doesnt work because body has been called already? cant return?
-			return JSON.parse(fullBody);
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
-		const answer = await destructure(url_api);
-		console.log('answer: ', answer);
+		destructure(url_api);
 
 		// date keys
 		// let datakeys = Array.apply(null, Array(100));
