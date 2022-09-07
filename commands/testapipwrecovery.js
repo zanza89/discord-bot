@@ -34,10 +34,12 @@ module.exports = {
 			console.log(success);
 			console.log(current_time);
 			console.log(data);
+			return data;
 		}
 		const targetId = interaction.options.getUser('target').id;
-		destructure(targetId);
-		// const [code] = Object.entries(data[code]);
+		const data = destructure(targetId);
+		Object.entries(data['code']);
+		console.log('data : ' + data);
 		// interaction.reply('Success: ' + success + '\nMessage: ' + message + '\nCurrent_Time: ' + current_time + '\nData: ' + data + '\nCode: ' + code);
 		interaction.reply('see logs');
 	},
