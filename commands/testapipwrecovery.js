@@ -28,14 +28,14 @@ module.exports = {
 					return response;
 				});
 		}
-		const targetId = interaction.options.getUser('target').id;
-		async function destructure(arg) {
-			const { message, success, current_time, data } = await getJSONResponse(arg) || {};
+		async function destructure(targetId) {
+			const { message, success, current_time, data } = await getJSONResponse(targetId) || {};
 			console.log(message);
 			console.log(success);
 			console.log(current_time);
 			console.log(data);
 		}
+		const targetId = interaction.options.getUser('target').id;
 		destructure(targetId);
 		// const [code] = Object.entries(data[code]);
 		// interaction.reply('Success: ' + success + '\nMessage: ' + message + '\nCurrent_Time: ' + current_time + '\nData: ' + data + '\nCode: ' + code);
