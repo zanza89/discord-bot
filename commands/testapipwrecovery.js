@@ -16,12 +16,20 @@ module.exports = {
 				discord_id: targetId,
 				auth_token: 'ThisIsAToken',
 			};
-			const { statusCode, headers, trailers, body } = await fetch(url_api, { body: data, method: 'POST' }) || {};
-			console.log('response received status Code: ', statusCode);
-			console.log('headers: ', headers);
-			const json = body;
-			console.log('trailers: ', trailers);
-			console.log('json: ', json);
+			await fetch(url_api, { body: data, method: 'POST' })
+				.then((response) => response.statusCode)
+				.then((statusCode) => {
+					console.log('response received status Code: ', statusCode);
+				})
+				.then((response) => response.headers)
+				.then((headers) => {
+					console.log('headers: ', headers);
+				})
+				.then((response) => response.body)
+				.then((body) => {
+					const json = body;
+					console.log('json: ', json);
+				});
 			// doesnt work because body has been called already? cant return?
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
