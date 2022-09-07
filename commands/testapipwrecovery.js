@@ -21,13 +21,11 @@ module.exports = {
 			console.log('trailers', trailers);
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
-		// const targetId = interaction.options.getUser('target').id;
+		const targetId = interaction.options.getUser('target').id;
 		destructure(url_api);
 		const data = {
-			async *[Symbol.asyncIterator]() {
-				yield 'hello';
-				yield 'world';
-			},
+			discord_id: targetId,
+			auth_token: 'ThisIsAToken',
 		};
 
 		await fetch(url_api, { body: data, method: 'POST' });
