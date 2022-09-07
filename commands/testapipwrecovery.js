@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { request } = require('undici');
+const { request, fetch } = require('undici');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -18,12 +18,20 @@ module.exports = {
 			for await (const data of body) {
 				console.log('data', data);
 			}
-			console.log('data json: ', await body.json());
 			console.log('trailers', trailers);
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		// const targetId = interaction.options.getUser('target').id;
 		destructure(url_api);
+		const data = {
+			async *[Symbol.asyncIterator]() {
+				yield 'hello';
+				yield 'world';
+			},
+		};
+
+		await fetch(url_api, { body: data, method: 'POST' });
+		console.log('data: ', data);
 		// date keys
 		// let datakeys = Array.apply(null, Array(100));
 		// datakeys = Object.keys(data);
