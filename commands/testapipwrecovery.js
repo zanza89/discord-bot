@@ -12,6 +12,7 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		async function destructure(url_api) {
+			let fullBody = '';
 			const data = {
 				discord_id: targetId,
 				auth_token: 'ThisIsAToken',
@@ -20,16 +21,15 @@ module.exports = {
 			console.log('response received status Code: ', statusCode);
 			console.log('headers: ', headers);
 			for await (const tokendata of body) {
-				console.log('data buffer: ', tokendata.json());
+				fullBody += tokendata.toString();
 			}
+			return JSON.parse(fullBody);
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
-		destructure(url_api);
+		const [answer] = destructure(url_api);
+		console.log(answer);
 
-		// const result = await fetch(url_api, { body: data, method: 'POST' });
-		// console.log('data sent: ', data);
-		// console.log('result ', result);
 		// date keys
 		// let datakeys = Array.apply(null, Array(100));
 		// datakeys = Object.keys(data);
