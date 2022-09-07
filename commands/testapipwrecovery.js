@@ -23,7 +23,7 @@ module.exports = {
 			for await (const tokendata of body) {
 				fullBody += tokendata.toString();
 			}
-			return JSON.parse(fullBody);
+			return fullBody;
 		}
 		const url_api = 'https://immortal.zwoggel.org/api/json/reset_pw';
 		const targetId = interaction.options.getUser('target').id;
