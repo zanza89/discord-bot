@@ -16,6 +16,6 @@ module.exports = {
 				{ name: 'https://immortal.zwoggel.org', value: 'invite Code: ' },
 			)
 			.setTimestamp();
-		interaction.send({ embeds: [embed] });
+		interaction.channel.send({ embeds: [embed] });
 	},
 };
