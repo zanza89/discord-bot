@@ -31,7 +31,12 @@ module.exports = {
 			});
 		}
 		else if (interaction.options.getSubcommand() === 'allmembers') {
-			// todo
+			// First use guild.members.fetch to make sure all members are cached
+			interaction.guild.members.fetch({ withPresences: true }).then(fetchedMembers => {
+				const totalMembers = fetchedMembers;
+				// Now you have a collection with all online member objects in the totalOnline variable
+				console.log(`There are currently ${totalMembers.size} members online in this guild!`);
+			});
 			await interaction.reply('not yet implemented');
 		}
 		else if (interaction.options.getSubcommand() === 'offlinemembers') {
