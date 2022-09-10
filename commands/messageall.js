@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('messageall')
-		.setDescription('messages a target')
+		.setDescription('messages all')
 		.addStringOption(option =>
 			option
 				.setName('input')
