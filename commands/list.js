@@ -20,6 +20,11 @@ module.exports = {
 			subcommand
 				.setName('techniker')
 				.setDescription('lists wether a of a specific guildmember the role "Techniker')
+				.addUserOption(option => option.setName('target').setDescription('The user').setRequired(true)))
+		.addSubcommand(subcommand =>
+			subcommand
+				.setName('marshalcommander')
+				.setDescription('lists wether a of a specific guildmember the role "Techniker')
 				.addUserOption(option => option.setName('target').setDescription('The user').setRequired(true))),
 	async execute(interaction) {
 		if (interaction.options.getSubcommand() === 'onlinemembers') {
@@ -27,7 +32,7 @@ module.exports = {
 				const totalOnline = fetchedMembers.filter(member => member.presence?.status === 'online');
 				// Now you have a collection with all online member objects in the totalOnline variable
 				console.log('There are currently ' + totalOnline.size + ' members online in this guild!');
-				interaction.channel.send('online: ' + totalOnline.size);
+				interaction.reply('online: ' + totalOnline.size);
 			});
 		}
 		else if (interaction.options.getSubcommand() === 'allmembers') {
@@ -36,25 +41,33 @@ module.exports = {
 				const totalMembers = fetchedMembers;
 				// Now you have a collection with all online member objects in the totalOnline variable
 				console.log(`There are currently ${totalMembers.size} members online in this guild!`);
-				interaction.channel.send('total member: ' + totalMembers.size);
+				interaction.reply('total member: ' + totalMembers.size);
 			});
-			await interaction.reply('not yet implemented');
 		}
 		else if (interaction.options.getSubcommand() === 'offlinemembers') {
 			await interaction.guild.members.fetch({ withPresences: true }).then(fetchedMembers => {
 				const totalOffline = fetchedMembers.filter(member => member.presence?.status === 'offline');
 				// Now you have a collection with all online member objects in the totalOnline variable
 				console.log('There are currently ' + totalOffline.size + ' members offline in this guild!');
-				interaction.channel.send('offline: ' + totalOffline.size);
+				interaction.reply('offline: ' + totalOffline.size);
 			});
 		}
 		else if (interaction.options.getSubcommand() === 'techniker') {
 			const member = interaction.options.getMember('target');
 			if (member.roles.cache.some(role => role.name === 'Techniker')) {
-				await interaction.reply('this guildmember has the role "Techniker"');
+				await interaction.reply(member + ' has the role "Techniker"');
 			}
 			else {
-				await interaction.reply('this guildmember has not the role "Techniker"');
+				await interaction.reply(member + ' has not the role "Techniker"');
+			}
+		}
+		else if (interaction.options.getSubcommand() === 'marshalcommander') {
+			const member = interaction.options.getMember('target');
+			if (member.roles.cache.some(role => role.name === 'Marshal/Commander')) {
+				await interaction.reply(member + 'has the role "Marshal/Commander"');
+			}
+			else {
+				await interaction.reply(member + ' has not the role "Marshal/Commander"');
 			}
 		}
 	},
