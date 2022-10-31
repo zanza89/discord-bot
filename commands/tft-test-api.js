@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { fetch } = require('undici');
+const { key } = require('/.apikey.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -18,7 +19,7 @@ module.exports = {
 	async execute(interaction) {
 		async function destructure(url_api) {
 			const data = {
-				apiKey: 'RGAPI-8c8765e5-922d-4804-8091-c990cb83b31d',
+				apiKey: key,
 			};
 			const { status, headers, body } = await fetch(url_api, { body: data, method: 'POST' }) || {};
 			console.log('Response Code: ', status);
