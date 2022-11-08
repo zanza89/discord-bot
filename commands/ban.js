@@ -26,7 +26,7 @@ module.exports = {
 		const ingameName = interaction.options.getString('ingamename');
 		const banReason = interaction.options.getString('reason');
 		const clans = interaction.options.getString('joinedclans');
-		interaction.guild.members.ban(user);
+		await interaction.guild.members.ban(user);
 		interaction.guild.bans.fetch().then(bans => {
 			const list = bans.map(bannedUser => bannedUser.user.username).join('\n');
 			interaction.reply(bans.size + ' users are banned: ' + '\n' + list);
